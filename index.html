@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOVATION - Redessinons l'avenir</title>
+    <title>HKD Technologies - Redessinons l'avenir</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -74,7 +75,19 @@
             padding: 20px 0;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .logo {
+            height: 40px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo-text {
             font-size: 28px;
             font-weight: 700;
             color: var(--accent);
@@ -82,8 +95,20 @@
             letter-spacing: 1px;
         }
 
-        body.dark-mode .logo {
+        body.dark-mode .logo-text {
             color: var(--text-lighter);
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: -5px;
+        }
+
+        body.dark-mode .logo-subtitle {
+            color: #aaa;
         }
 
         .nav-links {
@@ -208,16 +233,35 @@
             color: var(--text-light);
         }
 
+        .hero-logo {
+            height: 120px;
+            width: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
         .hero-title {
-            font-size: 64px;
+            font-size: 48px;
             font-weight: 800;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             color: var(--accent);
             line-height: 1.1;
         }
 
         body.dark-mode .hero-title {
             color: var(--text-lighter);
+        }
+
+        .hero-company {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        body.dark-mode .hero-company {
+            color: var(--text-light);
         }
 
         .hero-slogan {
@@ -790,12 +834,30 @@
             margin-bottom: 60px;
         }
 
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
         .footer-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-logo-text {
             font-size: 28px;
             font-weight: 700;
             color: var(--text-lighter);
-            margin-bottom: 20px;
-            display: inline-block;
+        }
+
+        .footer-company {
+            font-size: 14px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: -5px;
         }
 
         .footer-description {
@@ -883,8 +945,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .hero-title {
-                font-size: 48px;
+            .hero-logo {
+                height: 100px;
             }
         }
 
@@ -892,6 +954,12 @@
             .header-container {
                 flex-direction: column;
                 gap: 20px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
             
             .nav-links {
@@ -904,8 +972,16 @@
                 padding: 200px 0 80px;
             }
             
+            .hero-logo {
+                height: 80px;
+            }
+            
             .hero-title {
                 font-size: 36px;
+            }
+            
+            .hero-company {
+                font-size: 18px;
             }
             
             .hero-slogan {
@@ -945,8 +1021,16 @@
         }
 
         @media (max-width: 480px) {
+            .hero-logo {
+                height: 70px;
+            }
+            
             .hero-title {
                 font-size: 32px;
+            }
+            
+            .hero-company {
+                font-size: 16px;
             }
             
             .hero-slogan {
@@ -968,6 +1052,14 @@
             .initiative-title {
                 font-size: 20px;
             }
+            
+            .logo {
+                height: 35px;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -975,7 +1067,13 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">NOVATION</a>
+            <div class="logo-container">
+                <img src="logo_black.png" alt="HKD Technologies Logo" class="logo" id="headerLogo">
+                <div>
+                    <a href="#" class="logo-text">HKD</a>
+                    <div class="logo-subtitle">TECHNOLOGIES</div>
+                </div>
+            </div>
             
             <ul class="nav-links">
                 <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
@@ -1002,7 +1100,9 @@
     <section class="hero" id="accueil">
         <div class="container">
             <p class="hero-subtitle" data-i18n="hero.subtitle">La fintech qui révolutionne l'Afrique</p>
-            <h1 class="hero-title">NOVATION</h1>
+            <img src="logo_black.png" alt="HKD Technologies Logo" class="hero-logo" id="heroLogo">
+            <h1 class="hero-title">HKD</h1>
+            <p class="hero-company">TECHNOLOGIES</p>
             <p class="hero-slogan" data-i18n="hero.slogan">Redessinons l'avenir</p>
             
             <div class="hero-buttons">
@@ -1015,10 +1115,10 @@
     <!-- About Section -->
     <section id="apropos">
         <div class="container">
-            <h2 class="section-title" data-i18n="about.title">À Propos de Novation</h2>
+            <h2 class="section-title" data-i18n="about.title">À Propos de HKD Technologies</h2>
             
             <p class="about-intro" data-i18n="about.intro">
-                Novation est une startup fintech pas comme les autres. Nous sommes spécialisés dans les technologies financières de pointe, conçues pour répondre aux défis locaux tout en redéfinissant notre façon de faire les choses. Notre approche unique combine innovation audacieuse et compréhension profonde des besoins du marché africain.
+                HKD Technologies est une startup fintech pas comme les autres. Nous sommes spécialisés dans les technologies financières de pointe, conçues pour répondre aux défis locaux tout en redéfinissant notre façon de faire les choses. Notre approche unique combine innovation audacieuse et compréhension profonde des besoins du marché africain.
             </p>
             
             <div class="mission-cards">
@@ -1151,7 +1251,7 @@
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>contact@novation.ci</span>
+                            <span>contact@hkd-technologies.ci</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -1179,9 +1279,15 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">NOVATION</a>
+                    <div class="footer-logo-container">
+                        <img src="logo_white.png" alt="HKD Technologies Logo" class="footer-logo">
+                        <div>
+                            <div class="footer-logo-text">HKD</div>
+                            <div class="footer-company">TECHNOLOGIES</div>
+                        </div>
+                    </div>
                     <p class="footer-description" data-i18n="footer.description">
-                        Novation est une startup fintech de pointe dédiée à révolutionner la finance en Afrique avec des solutions innovantes depuis la Côte d'Ivoire.
+                        HKD Technologies est une startup fintech de pointe dédiée à révolutionner la finance en Afrique avec des solutions innovantes depuis la Côte d'Ivoire.
                     </p>
                 </div>
                 
@@ -1208,7 +1314,7 @@
             </div>
             
             <div class="copyright">
-                <p data-i18n="footer.copyright">© 2024 Novation. Tous droits réservés.</p>
+                <p data-i18n="footer.copyright">© 2024 HKD Technologies. Tous droits réservés.</p>
                 <p data-i18n="footer.madeWith">Fait avec passion en Côte d'Ivoire</p>
             </div>
         </div>
@@ -1234,8 +1340,8 @@
                 "hero.contact": "Contactez-nous",
                 
                 // About section
-                "about.title": "À Propos de Novation",
-                "about.intro": "Novation est une startup fintech pas comme les autres. Nous sommes spécialisés dans les technologies financières de pointe, conçues pour répondre aux défis locaux tout en redéfinissant notre façon de faire les choses. Notre approche unique combine innovation audacieuse et compréhension profonde des besoins du marché africain.",
+                "about.title": "À Propos de HKD Technologies",
+                "about.intro": "HKD Technologies est une startup fintech pas comme les autres. Nous sommes spécialisés dans les technologies financières de pointe, conçues pour répondre aux défis locaux tout en redéfinissant notre façon de faire les choses. Notre approche unique combine innovation audacieuse et compréhension profonde des besoins du marché africain.",
                 "about.mission.title": "Notre Mission",
                 "about.mission.text": "Développer des solutions financières accessibles et révolutionnaires qui transforment la façon dont l'Afrique interagit avec la finance.",
                 "about.vision.title": "Notre Vision",
@@ -1277,10 +1383,10 @@
                 "contact.error": "Veuillez remplir tous les champs du formulaire.",
                 
                 // Footer
-                "footer.description": "Novation est une startup fintech de pointe dédiée à révolutionner la finance en Afrique avec des solutions innovantes depuis la Côte d'Ivoire.",
+                "footer.description": "HKD Technologies est une startup fintech de pointe dédiée à révolutionner la finance en Afrique avec des solutions innovantes depuis la Côte d'Ivoire.",
                 "footer.links": "Liens rapides",
                 "footer.follow": "Suivez-nous",
-                "footer.copyright": "© 2024 Novation. Tous droits réservés.",
+                "footer.copyright": "© 2024 HKD Technologies. Tous droits réservés.",
                 "footer.madeWith": "Fait avec passion en Côte d'Ivoire"
             },
             en: {
@@ -1300,8 +1406,8 @@
                 "hero.contact": "Contact us",
                 
                 // About section
-                "about.title": "About Novation",
-                "about.intro": "Novation is not like any other fintech startup. We specialize in cutting-edge financial technologies, designed to address local challenges while redefining how we do things. Our unique approach combines bold innovation with a deep understanding of African market needs.",
+                "about.title": "About HKD Technologies",
+                "about.intro": "HKD Technologies is not like any other fintech startup. We specialize in cutting-edge financial technologies, designed to address local challenges while redefining how we do things. Our unique approach combines bold innovation with a deep understanding of African market needs.",
                 "about.mission.title": "Our Mission",
                 "about.mission.text": "To develop accessible and revolutionary financial solutions that transform how Africa interacts with finance.",
                 "about.vision.title": "Our Vision",
@@ -1343,13 +1449,29 @@
                 "contact.error": "Please fill in all fields of the form.",
                 
                 // Footer
-                "footer.description": "Novation is a cutting-edge fintech startup dedicated to revolutionizing finance in Africa with innovative solutions from Ivory Coast.",
+                "footer.description": "HKD Technologies is a cutting-edge fintech startup dedicated to revolutionizing finance in Africa with innovative solutions from Ivory Coast.",
                 "footer.links": "Quick Links",
                 "footer.follow": "Follow Us",
-                "footer.copyright": "© 2024 Novation. All rights reserved.",
+                "footer.copyright": "© 2024 HKD Technologies. All rights reserved.",
                 "footer.madeWith": "Made with passion in Ivory Coast"
             }
         };
+
+        // Fonction pour changer les logos selon le mode
+        function updateLogos() {
+            const headerLogo = document.getElementById('headerLogo');
+            const heroLogo = document.getElementById('heroLogo');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                // Mode sombre - utiliser logo_white.png
+                headerLogo.src = 'logo_white.png';
+                heroLogo.src = 'logo_white.png';
+            } else {
+                // Mode clair - utiliser logo_black.png
+                headerLogo.src = 'logo_black.png';
+                heroLogo.src = 'logo_black.png';
+            }
+        }
 
         // Fonction de traduction
         function translatePage(language) {
@@ -1393,6 +1515,8 @@
             document.body.classList.add('dark-mode');
             themeIcon.className = 'fas fa-sun';
             themeText.setAttribute('data-i18n', 'nav.lightMode');
+            // Mettre à jour les logos pour le mode sombre
+            updateLogos();
         } else {
             themeIcon.className = 'fas fa-moon';
             themeText.setAttribute('data-i18n', 'nav.darkMode');
@@ -1416,6 +1540,9 @@
                 themeText.setAttribute('data-i18n', 'nav.darkMode');
                 localStorage.setItem('theme', 'light');
             }
+            
+            // Mettre à jour les logos
+            updateLogos();
             
             // Mettre à jour la traduction du texte du bouton
             const currentLang = localStorage.getItem('language') || 'fr';
